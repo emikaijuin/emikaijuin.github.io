@@ -1,0 +1,165 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+#page-container {
+  margin-top: 5%;
+  font-size: 2em;
+
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+#content-container {
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Image */
+
+#image {
+  width: 50%;
+  min-width: 150px;
+  max-width: 350px;
+  order: 2;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 100%;
+  margin-bottom: 5%;
+}
+
+/* About */
+
+#name {
+  font-size: 15vw;
+}
+
+#about {
+  width: 100%;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  order: 1;
+}
+
+#info {
+  padding: 0 10%;
+  font-size: 0.5em;
+  text-align: center;
+  order: 3;
+}
+
+/* Contact */
+#contact > div {
+  width: 50%;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;   
+  display: flex;
+  justify-content: space-around;
+}
+
+#contact {
+  width: 50%;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  display: flex;
+  margin-bottom: 5%;
+  padding: 0 5%;
+}
+
+/* Info */
+
+ul {
+  padding: 0;
+}
+
+.info-bullet {
+  list-style-type: none;
+  margin: 1em 0;
+}
+
+/*=============
+    Tablet
+==============*/
+
+@media (min-width: 768px) {
+  #name {
+    font-size: 2em;
+  }
+
+  #page-container {
+    padding: 0 10%;
+    margin-top: 10%;
+  }
+
+  #contact {
+    padding: 0 10%;
+    font-size: 1.25em;
+    margin-bottom: 5%;
+  }
+
+  #info {
+    font-size: 2vw;
+  }
+}
+
+/*=============
+    Desktop
+==============*/
+
+@media (min-width: 1281px) {
+  #page-container {
+    margin: 15% 5%;
+    padding: 0;
+  }
+
+  #about {
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    align-self: center;
+  }
+
+  #image {
+    width: auto;
+  }
+
+  #content-container {
+    flex-wrap: nowrap;
+  }
+
+  #info {
+    flex-grow: 2;
+    width: 50%;
+    padding: 0 3% 0 2%;
+    text-align: right;
+    align-self: center;
+    font-size: 0.5em;
+  }
+
+}
