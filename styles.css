@@ -2,6 +2,11 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 100;
   background-color: #fafafa;
+  color: black;
+}
+
+a, a:visited {
+  color: black;
 }
 
 #page-container {
@@ -50,7 +55,7 @@ img {
 
 #name {
   font-size: 15vw;
-  font-family: "Raleway Dots";
+  font-weight: 100;
 }
 
 #about {
@@ -70,6 +75,7 @@ img {
   font-size: 0.5em;
   text-align: center;
   order: 3;
+  font-weight: 400;
 }
 
 /* Contact */

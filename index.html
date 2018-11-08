@@ -18,16 +18,22 @@
       </div>
 
       <div id="about">
-        <h1 id="name">Emika Ijuin</h1>
+        <h1 id="name">EMIKA IJUIN</h1>
         <div id="contact">
           <div id="github">
-             <i class="fab fa-github"></i>
+             <a href="github.com/emikaijuin">
+              <i class="fab fa-github"></i>
+             </a>
            </div>
            <div id="linkedin">
-             <i class="fab fa-linkedin"></i>
+             <a href="https://www.linkedin.com/in/emika-ijuin-p-e-a9753370/">
+              <i class="fab fa-linkedin"></i>
+            </a>
            </div>
-           <div id="email">
-             <i class="fas fa-envelope" alt="emikaijuin@gmail.com"></i>
+           <div id="email" onClick='copyEmail();'>
+             <a href="#" name="emikaijuin@gmail.com" id="email-value">
+               <i class="fas fa-envelope" alt="emikaijuin@gmail.com"></i>
+             </a>
            </div>
         </div>
       </div>
@@ -50,5 +56,15 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function copyEmail(){
+      var email = document.getElementById('email-value');
+      email.select();
+      document.execCommand("copy");
+    }
+  </script>
+
 </body>
 </html>
+
