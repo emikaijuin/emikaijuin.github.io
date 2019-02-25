@@ -31,9 +31,20 @@
             </a>
            </div>
            <div id="email" data-clipboard-text="emikaijuin@gmail.com">
-              <i class="fas fa-envelope" alt="emikaijuin@gmail.com" id="email-icon">
+              <i 
+                class="fas fa-envelope" 
+                alt="emikaijuin@gmail.com" 
+                id="email-icon"
+              >
                 <div>
-                  <div id="email-hover" onClick="emailClick();" onMouseout="resetEmail();">click to copy</div>
+                  <div 
+                    id="email-hover" 
+                    class="hidden" 
+                    onClick="emailClick();" 
+                    onMouseout="resetEmail();"
+                  >
+                      click to copy
+                  </div>
                 </div>
               </i>
             </div>
@@ -64,12 +75,26 @@
 
   <script>
     let emailHover = document.getElementById("email-hover");
+    let emailIcon = document.getElementById("email-icon");
+    let body = document.querySelector('body');
+
+    emailIcon.addEventListener("mouseover", showEmailTip);
+    body.addEventListener("mouseover", function(){
+      emailIcon.addEventListener("mouseover", showEmailTip);
+    })
+    function showEmailTip() {
+      emailHover.classList.remove("hidden")
+    }
     function emailClick() {
       emailHover.innerHTML = "copied"
+      setTimeout(function(){
+        emailIcon.removeEventListener("mouseover", showEmailTip);
+        emailHover.classList.add("hidden");
+      }, 1000)
     }
-
+    
     function resetEmail() {
-      console.log('mouseout')
+      emailHover.classList.add("hidden")
       emailHover.innerHTML = "click to copy"
     }
     new ClipboardJS('#email')      
