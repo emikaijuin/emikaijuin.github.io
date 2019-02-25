@@ -136,19 +136,23 @@ a, a:visited {
   justify-content: center;
 }
 
-#email:hover #email-hover {
+/* #email-icon:hover #email-hover {
   display: block;
-}
+} */
 
 #email-hover {
   background-color: rgba(250,250,250);
   font-family: "Raleway";
   height: auto;
-  display: none;
   font-size: 1rem;
   font-weight: 700;
   padding: 50% 10%;
   width: 100%;
+  animation-timing-function: ease-in-out;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Info */
