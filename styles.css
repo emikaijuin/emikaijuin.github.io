@@ -30,7 +30,7 @@ a, a:visited {
 }
 
 #page-container {
-  margin-top: 5%;
+  /* margin-top: 5%; */
   font-size: 2em;
 
   display: -webkit-box; 
@@ -259,7 +259,7 @@ h2 > a:link {
 
   #page-container {
     padding: 0 10%;
-    margin-top: 10%;
+    /* margin-top: 10%; */
   }
 
   #contact {
