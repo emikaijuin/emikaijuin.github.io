@@ -1,9 +1,29 @@
 body {
   font-family: "Raleway", sans-serif;
-  font-weight: 100;
+  /* font-weight: 100; */
   background-color: #fafafa;
   color: black;
+  margin: 0;
 }
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/*  End */
 
 a, a:visited {
   color: black;
@@ -44,7 +64,7 @@ a, a:visited {
   order: 2;
 }
 
-img {
+#image > img {
   width: 100%;
   height: auto;
   border-radius: 100%;
@@ -97,7 +117,38 @@ img {
   display: -webkit-flex; 
   display: flex;
   margin-bottom: 5%;
+  margin-top: 5%;
   padding: 0 5%;
+}
+
+#email {
+  cursor: pointer;
+  position: relative;
+}
+
+#email-icon > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#email:hover #email-hover {
+  display: block;
+}
+
+#email-hover {
+  background-color: rgba(250,250,250);
+  font-family: "Raleway";
+  height: auto;
+  display: none;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 50% 10%;
+  width: 100%;
 }
 
 /* Info */
@@ -109,6 +160,88 @@ ul {
 .info-bullet {
   list-style-type: none;
   margin: 1em 0;
+}
+
+h2 > a:link {
+  text-decoration: none;
+}
+
+/* PROJECTS PAGE */
+
+/* Project Container */
+
+#project-container {
+  display: flex;
+}
+
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  min-height: 100vh;
+  box-shadow: gainsboro 3px 3px 100px;
+}
+
+#project-detail {
+  display: none;
+}
+
+.project-description {
+  display: none;
+}
+
+.project {
+  width: 100vw;
+  height: 20vh;
+  color: #2F4F4F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  box-sizing: border-box;
+}
+
+.expand:hover {
+  cursor: pointer;
+}
+
+
+.is-active-tablet {
+  width: 100vw !important;
+  height: 100vw !important;
+  order: 0;
+}
+
+.project > h2 {
+  position: absolute;
+  margin: 0;
+  font-weight: 300;
+}
+
+.ruby {
+  /* background-color: #FF5E5B; */
+  background-color: #FBF3F9;
+}
+
+.elixir {
+  /* background-color: #FFFFEA; */
+  background-color: #DFCDC3;
+}
+
+.chrome-extension {
+  /* background-color: #00CECB; */
+  background-color: #A2A392;
+}
+
+.arduino {
+  /* background-color: #FFED66; */
+  background-color: #BACDB0;
+}
+
+.python {
+  /* background-color: #D8D8D8; */
+  background-color: #729B79;
 }
 
 /*=============
@@ -133,6 +266,11 @@ ul {
 
   #info {
     font-size: 2vw;
+  }
+
+  .project{
+    width: 50%;
+    height: 50vw;
   }
 }
 
@@ -171,5 +309,58 @@ ul {
     align-self: center;
     font-size: 0.5em;
   }
+
+  #project-container {
+    width: 100%;
+  }
+
+  #project-detail-container {
+    position: fixed;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #project-detail > img {
+    max-width: 75%;
+    height: auto;
+  }
+  #project-color {
+    background-color: whitesmoke;
+    opacity: 0.3;
+    position: fixed;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  #project-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;    
+    width: 95%;
+    max-height: 95%;
+    overflow-y: auto;
+  }
+
+  #project-detail > h3, h4 {
+    width: 100%;
+    align-items: center;
+  }
+
+  #projects {
+    width: 50%;
+  }
+
+  .project {
+    width: 50%;
+    height: 25vw;
+  }
+
 
 }
