@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emika Ijuin</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+  <body>
+    <div id="project-container">
+      <div id="projects">
+        <!-- Remote LED Project -->
+        <div class="project arduino">
+          <h2>
+            <span class="expand relc">REMOTE LIGHT CONTROL</span>
+          </h2>
+          <div class="project-description relc">
+            <p>
+              This project is an Arduino build using a NodeMCU board. An LED is connected to the arduino, which is connected to a web application hosted on Heroku using web sockets. From the web app, a user is able to pick a color and the selected color is broadcasted through the channel to the Arduino. The data is parsed and sent to the LED as an RGB value, updating the color emitted from the diode.
+            </p> 
+            <p>
+              In this way, a user is able to control an LED light from anywhere in the world so long as the Arduino is able to connect to a Wi-Fi network. At this stage, only one channel exists to control a single Arduino. In the future, the project will be updated to accept multiple devices by assigning each a unique ID upon start-up and saving it to user groups. Users could then control groups of devices, e.g. Living Room Lights, thus turning the web app into an effective smart home hub.
+            </p>
+            <img src="https://i1.wp.com/www.esp8266learning.com/wp-content/uploads/2017/09/nodemcu-and-led_bb.png?w=921" alt="arduino">
+          </div>
+        </div>
+        <!--  AirBnB Clone  -->
+        <div class="project ruby">
+          <h2><span class="expand abc" >AIRBNB CLONE</span></h2>
+          <div class="project-description abc">
+            <p>
+              A clone of AirBnb. Project provides online payment through a secure third-party payment portal, ActionMailer, ActiveJob, and Redis, and more.
+            </p>
+          </div>
+        </div>
+        <!-- Budget Angel -->
+        <div class="project chrome-extension">
+          <h2><span class="expand ba">BUDGET ANGEL</span></h2>
+          <div class="project-description ba">
+            <p>
+              An ongoing project creating a chrome extension which overlays budgeting information on items while online shopping. Currently obtaining information by scraping data from Mint, which does not provide an API. Items will have overlaid on the price the percentage of the remaining monthly allowance of that budget category each item represents. 
+            </p>
+          </div>
+        </div>
+        <!-- Identicon Generator -->
+        <div class="project elixir">
+          <h2><span class="expand ig">IDENTICON GENERATOR</span></h2>
+          <div class="project-description ig">
+            A program which generates identicons mimicking those used by GitHub as default avatars. A string input is converted to a datastream, which is then used to generate a contrast color and a grid layout. Selected squares on the grid are colored in, and the overall configuration is drawn to a canvas and saved as a PNG format using Erlang's graphic module EGD. 
+          </div>
+        </div>
+        <!-- Fuzzify -->
+        <div class="project ruby">
+          <h2><span class="expand fy" >FUZZIFY</span></h2>
+          <div class="project-description fy">
+            <p>
+              This project utilizes <a href="https://github.com/wvanbergen/chunky_png" target="blank"> ChunkyPNG</a> by Willem van Bergen, a library which reads and writes PNG files. Fuzzify allows users to load local images and specify a level to which to "fuzzify" the image. The program will write a folder to the user's machine and there save a fuzzified image. These images could be used to analyze color composition of photos or generate color palettes. As a separate feature, the program also calculates and saves an RGB histogram of the image.
+            </p>
+
+            <p>
+              Future features for this program could include calculating and applying Gaussian blurs over the pixel map to generate abstract art based upon a fuzzified copy of the original image.
+            </p>
+            
+            <h3> Examples </h3>
+
+            <h4> Original Image </h4>
+            <img src="images/fuzzify_satellite/satellite.PNG" alt="satellite_image">
+
+            <h4> Fuzzified Images </h4>
+            <img src="images/fuzzify_satellite/fuzzy_0_satellite.png" alt="fuzzified-satellite-image-1">
+
+            <img src="images/fuzzify_satellite/fuzzy_1_satellite.png" alt="fuzzified-satellite-image-2">
+
+            <img src="images/fuzzify_satellite/fuzzy_satellite_color_palette.png" alt="satellite-color-palette">
+
+            <h4> Histogram </h4>
+            <img src="images/fuzzify_satellite/satellite_histogram.png" alt="satellite-histogram">
+          </div>
+        </div>
+        <!-- Robot Arm -->
+        <div class="project arduino">
+          <h2><span class="expand ra" >ROBOT ARM</span></h2>
+          <div class="project-description ra">
+            <p>
+              This is Robot Arm with 6 degrees of freedom controlled by joysticks. Input from the joystick describing the angle of tilt in the X- and Y-axes is mapped to coordinate the 6 servo motors operating the arm. Range of motion includes rotation and extension of shoulder, extension of elbow, rotation and extension of wrist, and closure of hand to grasp an object. 
+            </p>
+
+            <h3>Example Images</h3>
+            <p>Coming Soon!</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="project-detail-container">
+        <div id="project-color"></div>
+        <div id="project-detail">
+          <h2> << Select a project</h2>
+        </div>
+      </div>
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script>
+    <script>
+      $('.expand').each(function() {
+          var link = $(this);
+          link.click(function(e) {
+              e.preventDefault();
+              var project = $(`.project-description.${e.target.classList[1]}`);
+              $('#project-detail').html(project.html());
+              $('#project-color').css("background-color", project.parent().css('background-color'));
+          });
+      });
+
+    </script>
+  </body>
+  </html>
