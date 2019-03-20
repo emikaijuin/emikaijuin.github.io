@@ -1,3 +1,4 @@
+
 body {
   font-family: "Raleway", sans-serif;
   /* font-weight: 100; */
@@ -181,9 +182,11 @@ h2 > a:link {
 #projects {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   width: 100vw;
   min-height: 100vh;
   box-shadow: gainsboro 3px 3px 100px;
+  /* padding-top: 5%; */
 }
 
 #project-detail {
@@ -204,8 +207,18 @@ h2 > a:link {
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
+.project-preview {
+  width: 110%;
+  opacity: 0.5;
+  display: none;
+}
+
+.project:hover .project-preview {
+  display: block;
+}
 .expand:hover {
   cursor: pointer;
 }
@@ -220,7 +233,9 @@ h2 > a:link {
 .project > h2 {
   position: absolute;
   margin: 0;
-  font-weight: 300;
+  font-weight: 400;
+  z-index: 2;
+  /* width: 10vw; */
 }
 
 .ruby {
@@ -323,7 +338,7 @@ h2 > a:link {
     right: 0;
     width: 50%;
     height: 100vh;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
   }
@@ -358,12 +373,14 @@ h2 > a:link {
   }
 
   #projects {
-    width: 50%;
+    width: 100%;
+    align-content: center;
   }
 
   .project {
-    width: 50%;
-    height: 25vw;
+    width: 25%;
+    height: 10vw;
+    margin: 2% 2%;
   }
 
 
