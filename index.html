@@ -9,6 +9,7 @@
 
 </head>
 
+
 <body>
   <div id="page-container">
     <div id="content-container">
@@ -26,21 +27,21 @@
              </a>
            </div>
            <div id="linkedin">
-             <a href="https://www.linkedin.com/in/emika-ijuin-p-e-a9753370/" target="_blank"> 
+             <a href="https://www.linkedin.com/in/emika-ijuin-p-e-a9753370/" target="_blank">
               <i class="fab fa-linkedin"></i>
             </a>
            </div>
            <div id="email" data-clipboard-text="emikaijuin@gmail.com">
-              <i 
-                class="fas fa-envelope" 
-                alt="emikaijuin@gmail.com" 
+              <i
+                class="fas fa-envelope"
+                alt="emikaijuin@gmail.com"
                 id="email-icon"
               >
                 <div>
-                  <div 
-                    id="email-hover" 
-                    class="hidden" 
-                    onClick="emailClick();" 
+                  <div
+                    id="email-hover"
+                    class="hidden"
+                    onClick="emailClick();"
                     onMouseout="resetEmail();"
                   >
                       click to copy
@@ -50,7 +51,7 @@
             </div>
           </div>
         </div>
-        
+
       <div id="info">
         <ul>
           <li class="info-bullet">
@@ -92,12 +93,12 @@
         emailHover.classList.add("hidden");
       }, 2500)
     }
-    
+
     function resetEmail() {
       emailHover.classList.add("hidden")
       emailHover.innerHTML = "click to copy"
     }
-    new ClipboardJS('#email')      
+    new ClipboardJS('#email')
   </script>
 
 </body>
